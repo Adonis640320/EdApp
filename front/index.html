@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="edApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ed-admin</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/colors.css" rel="stylesheet" type="text/css">
+	<link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
+	<!--Added by Erik-->
+	<link href="../../assets/css/assetment-classroom.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+
+		
+</head>
+	<body>
+		<!-- UI-View for replacing pages -->
+		<div ui-view></div>
+
+		<!-- Added by Erik -->
+
+		<!-- Core JS files -->
+		<script
+			  src="https://code.jquery.com/jquery-2.2.4.js"
+			  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+			  crossorigin="anonymous"></script>
+		<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script> -->
+		<script type="text/javascript" src="../../assets/js/core/libraries/bootstrap.min.js"></script>
+
+		<!-- AngularJS Modules -->
+		<script src="assets/js/angular/angular.js"></script>
+		<script src="assets/js/angular/angular-route.js"></script>
+		<script src="assets/js/angular/angular-cookies.js"></script>
+		<script src="assets/js/angular/angular-ui-router.js"></script>
+		<!-- End AngularJS -->
+
+		<script src="http://code.createjs.com/createjs-2014.12.12.min.js"></script>
+		<!-- Init AngularJS APP -->
+		<script src="edhome/app.js"></script>
+		<!-- End AngularJS Init-->
+		
+		<!-- Assetment Classroom JS Files -->
+		<script src="admin/assetment-classroom/classroomModule.js"></script>
+		<script src="admin/assetment-classroom/services/classroomService.js"></script>
+		<script src="admin/assetment-classroom/controllers/classroomController.js"></script>
+
+	</body>
+</html>

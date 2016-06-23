@@ -1,0 +1,12 @@
+<div class="students">
+	<h4 class="shape-title">Students</h4>
+	<div class="students-list">
+		<div ng-repeat="number in studentNumbers">
+			<div class="student-item{{number}}">
+				<div class="student-number" id="student-index{{number}}" draggable="true" ondragstart="handleDragStart(event)"><span>{{number}}</span></div>
+				<input class=" student-name{{number}} student-name" type="text" placeholder="Replace Name"/>
+				<div class="clearfix"></div>
+			</div>
+		</div> 			
+	</div>
+</div>

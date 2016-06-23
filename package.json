@@ -1,0 +1,30 @@
+{
+  "name": "Ed-admin-node",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/node-token-authentication"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Erik",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "bson": "^0.4.20",
+    "cookie-parser": "^1.4.0",
+    "cron": "^1.1.0",
+    "express": "~4.0.0",
+    "express-session": "^1.12.1",
+    "express-sessions": "^1.0.5",
+    "moment": "^2.11.1",
+    "morgan": "~1.0.0",
+    "mssql": "^3.3.0",
+    "node-gcm": "^0.13.1",
+    "node-gyp": "^3.2.1",
+    "request": "^2.67.0",
+    "tedious": "^1.14.0"
+  },
+  "devDependencies": {}
+}
