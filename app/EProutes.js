@@ -1,4 +1,4 @@
-var classroom = require('./classroom.js');
+var classroom = require('./EPclassroom.js');
 var proxy = require('./proxy.js');
 module.exports = function(router) {
 

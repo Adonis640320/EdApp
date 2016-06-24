@@ -12,7 +12,7 @@ var config = {
 module.exports = function(args){
 	var dbConn = new sql.Connection(config);
     dbConn.connect().then(function() {
-    	var table = new sql.Table('ARClassDetail');
+    	var table = new sql.Table('EPARClassDetail');
 		table.create = true;
 /*		table.columns.add('CID', sql.Int, {nullable: true, primary: true});
 		table.columns.add('Sort', sql.Int, {nullable: false});

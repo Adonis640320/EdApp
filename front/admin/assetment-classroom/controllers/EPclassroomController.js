@@ -3,13 +3,13 @@
  */
 
 var dependencies = [
-    'edApp.admin.assetment.classroom.services',
+    'EP.admin.assetment.classroom.services',
 ];
 
-angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
+angular.module('EP.admin.assetment.classroom.controllers', dependencies)
 
     .controller(
-        'classroomController', ['$rootScope', '$scope', '$cookieStore', 'classroomService', '$state', function($rootScope, $scope, $cookieStore,classroomService, $state) {
+        'EPclassroomController', ['$rootScope', '$scope', '$cookieStore', 'EPclassroomService', '$state', function($rootScope, $scope, $cookieStore,EPclassroomService, $state) {
 
             $scope.shapeDescription = "";
             $scope.studentNumbers = []
@@ -90,7 +90,7 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
 
             $scope.saveClassroom = function(){
                 var info = $scope.drawingControl.getClassroom();
-                classroomService.save(info).then(function(response){
+                EPclassroomService.save(info).then(function(response){
                     console.log('successfully saved');
                 });
             }
@@ -400,14 +400,14 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
 
                 // Draw background of Div to Canvas
                 function drawDivBG(shapeId, pos, currentIndex){
-                    var urlArray = ['http://localhost:8000/assets/images/window.png',
-                                    'http://localhost:8000/assets/images/door.png',
-                                    'http://localhost:8000/assets/images/blackboard.png',
-                                    'http://localhost:8000/assets/images/bookshelves.png',
-                                    'http://localhost:8000/assets/images/bulletin.png',
-                                    'http://localhost:8000/assets/images/locker.png',
-                                    'http://localhost:8000/assets/images/computer.png',
-                                    'http://localhost:8000/assets/images/horseshoe.png'
+                    var urlArray = ['http://localhost:8000/assets/images/EPshapes/EPwindow.png',
+                                    'http://localhost:8000/assets/images/EPshapes/EPdoor.png',
+                                    'http://localhost:8000/assets/images/EPshapes/EPblackboard.png',
+                                    'http://localhost:8000/assets/images/EPshapes/EPbookshelves.png',
+                                    'http://localhost:8000/assets/images/EPshapes/EPbulletin.png',
+                                    'http://localhost:8000/assets/images/EPshapes/EPlocker.png',
+                                    'http://localhost:8000/assets/images/EPshapes/EPcomputer.png',
+                                    'http://localhost:8000/assets/images/EPshapes/EPhorseshoe.png'
                                     ];
                     var bgurl = "";
                     

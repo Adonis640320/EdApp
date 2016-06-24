@@ -124,7 +124,7 @@
 
 /*Furniture*/
 .furniture-window{
-	background: url('../images/Window.png') no-repeat center;
+	background: url('../images/EPshapes/EPwindow.png') no-repeat center;
     background-size:contain;
     width: auto;
     height:20px;
@@ -132,7 +132,7 @@
 }
 
 .furniture-door{
-	background: url('../images/door.png') no-repeat center;
+	background: url('../images/EPshapes/EPdoor.png') no-repeat center;
     background-size:contain;
 	width: auto;
     height:30px;
@@ -140,7 +140,7 @@
 }
 
 .furniture-blackboard{
-	background: url('../images/blackboard.png') no-repeat center;
+	background: url('../images/EPshapes/EPblackboard.png') no-repeat center;
     background-size:contain;
 	width: auto;
     height:30px;
@@ -148,7 +148,7 @@
 }
 
 .furniture-bulletin{
-	background: url('../images/bulletin.png') no-repeat center;
+	background: url('../images/EPshapes/EPbulletin.png') no-repeat center;
     background-size:contain;
 	width: auto;
     height:30px;
@@ -156,14 +156,14 @@
 }
 
 .furniture-bookshelves{
-	background: url('../images/bookshelves.png') no-repeat center;
+	background: url('../images/EPshapes/EPbookshelves.png') no-repeat center;
 	width: auto;
     height:30px;
     max-height: 30px;
 }
 
 .furniture-locker{
-	background: url('../images/locker.png') no-repeat center;
+	background: url('../images/EPshapes/EPlocker.png') no-repeat center;
     background-size:contain;
 	width: auto;
     height:30px;
@@ -171,7 +171,7 @@
 }
 
 .furniture-computer{
-	background: url('../images/computer.png') no-repeat center;
+	background: url('../images/EPshapes/EPcomputer.png') no-repeat center;
     background-size: contain;
 	width: auto;
     height:35px;
@@ -229,29 +229,12 @@
 
 .desk-horseshoe{
 	margin-top: 10px;
-	background: url('../images/horseshoe.png') no-repeat center;
+	background: url('../images/EPshapes/EPhorseshoe.png') no-repeat center;
     background-size: contain;
 	width: auto;
     height:30px;
     max-height: 30px;
 }
-
-/*
-.desk-horseshoe::before{
-	content: "";
-	display: inline-block;
-	position: absolute;
-	right: -0.25em;
-	bottom: -0.1em;
-	border-width: 0;
-	background: red;
-	width: 0.35em;
-	height: 0.08em;
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-}*/
 
 /*Students*/
 .student-item{
@@ -277,5 +260,4 @@
 
 .tempInput{
 	position: absolute;
-	
 }

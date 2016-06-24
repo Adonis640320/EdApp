@@ -4,11 +4,11 @@
 
 var dependencies = ['ngCookies'];
 
-angular.module('edApp.admin.assetment.classroom.services', dependencies)
+angular.module('EP.admin.assetment.classroom.services', dependencies)
 
     .value('CLASSROOM_ENDPOINT', 'http://localhost:8000/api/admin/assetment/classroom/save')
 
-    .factory('classroomService', ['CLASSROOM_ENDPOINT', '$http', '$cookieStore',
+    .factory('EPclassroomService', ['CLASSROOM_ENDPOINT', '$http', '$cookieStore',
         function(CLASSROOM_ENDPOINT, $http, $cookieStore) {
 
             var classroom = {};

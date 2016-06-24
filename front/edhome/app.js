@@ -9,10 +9,10 @@ var dependencies = [
     'ngRoute',
     'ui.router',
     'ngCookies',
-    'edApp.admin.assetment.classroom',
+    'EP.admin.assetment.classroom',
 ];
 
-angular.module('edApp', dependencies)
+angular.module('EP', dependencies)
 
     .config(
         ['$stateProvider', '$urlRouterProvider', '$routeProvider', '$locationProvider', '$httpProvider',

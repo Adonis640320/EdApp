@@ -7,10 +7,10 @@
 var dependencies = [
     'ui.router',
     'ngCookies',
-    'edApp.admin.assetment.classroom.controllers',
+    'EP.admin.assetment.classroom.controllers',
 ];
 
-angular.module('edApp.admin.assetment.classroom', dependencies)
+angular.module('EP.admin.assetment.classroom', dependencies)
 
     .config(
         ['$stateProvider', '$urlRouterProvider', '$locationProvider',
@@ -18,43 +18,43 @@ angular.module('edApp.admin.assetment.classroom', dependencies)
             $stateProvider
                 .state('admin', {
                     url: '/admin',
-                    controller: 'classroomController',
+                    controller: 'EPclassroomController',
                     template: '<div ui-view></div>'
                 })
 
                 .state('admin.assetment', {
                     url: '/assetment',
-                    templateUrl: '/admin/assetment-classroom/views/template.html'
+                    templateUrl: '/admin/assetment-classroom/views/EPclasstemp.html'
                 })
 
                 .state('admin.assetment.startclassroom', {
                     url: '/startClassroom',
-                    templateUrl: '/admin/assetment-classroom/views/start.html'
+                    templateUrl: '/admin/assetment-classroom/views/EPstart.html'
                 })
 
                 .state('admin.assetment.classroom', {
                     url: '/classroom',
-                    templateUrl: '/admin/assetment-classroom/views/classroom.html'
+                    templateUrl: '/admin/assetment-classroom/views/EPclassroom.html'
                 })
 
                 .state('admin.assetment.classroom.roomshape', {
                     url: '/roomshape',
-                    templateUrl: '/admin/assetment-classroom/views/roomshape.html'
+                    templateUrl: '/admin/assetment-classroom/views/EProomshape.html'
                 })                
 
                 .state('admin.assetment.classroom.furniture', {
                     url: '/furniture',
-                    templateUrl: '/admin/assetment-classroom/views/furniture.html'
+                    templateUrl: '/admin/assetment-classroom/views/EPfurniture.html'
                 })                
                 
                 .state('admin.assetment.classroom.desks', {
                     url: '/desks',
-                    templateUrl: '/admin/assetment-classroom/views/desks.html'
+                    templateUrl: '/admin/assetment-classroom/views/EPdesks.html'
                 })
 
                 .state('admin.assetment.classroom.students', {
                     url: '/students',
-                    templateUrl: '/admin/assetment-classroom/views/students.html'
+                    templateUrl: '/admin/assetment-classroom/views/EPstudents.html'
                 })
 
     }])
