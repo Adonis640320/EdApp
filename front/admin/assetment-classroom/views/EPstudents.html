@@ -1,9 +1,9 @@
 <div class="students">
 	<h4 class="shape-title">Students</h4>
 	<div class="students-list">
-		<div ng-repeat="number in students">
-			<div class="student-item{{number}}" id="student-index{{number}}" draggable="true" ondragstart="handleDragStart(event)">
-				{{number}}
+		<div ng-repeat="student in students">
+			<div class="student-item{{student.index}}" id="student-index{{student.index}}" draggable="true" ondragstart="handleDragStart(event)">
+				<span>{{student.name}}</span>
 			</div>
 		</div> 			
 	</div>

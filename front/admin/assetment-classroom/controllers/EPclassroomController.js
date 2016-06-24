@@ -19,7 +19,7 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
 
             var studentList = [];
             $scope.students = []
-
+            var cid = "";
             var isDragging = false;
             
             $scope.init = function(){
@@ -31,7 +31,6 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                 $state.go('admin.assetment.classroom.roomshape');
                 $scope.shapeDescription = "Select a room shape that matches your room. Don't worry about strange curves or corners, just approximate.";
                 getClassList();
-                addStudentItemList();
             }
 
             // Room Shape Select
@@ -64,9 +63,9 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
 
             $scope.saveClassroom = function(){
                 var info = $scope.drawingControl.getClassroom();
-/*                EPclassroomService.saveClass(info).then(function(response){
+                EPclassroomService.saveClassInfo(info).then(function(response){
                     console.log('successfully saved');
-                });*/
+                });
             }
 
             // Dragging Shape
@@ -90,10 +89,6 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                   y:evt.clientY - document.getElementById('canvas').getBoundingClientRect().top}
                   );
             }
-            
-            function addStudentItemList(){
-                for(var i = 0; i < 30; i++) $scope.students.push(i+1);
-            }
 
             function getClassList(){
                 EPclassroomService.getClassList().then(function(result){
@@ -107,13 +102,25 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                 });
             }
 
-            $('.class-list').on('change', function() {
-                EPclassroomService.getClassInfo(this.value).then(function(result){
+            changeClassList = function(){
+                cid = $('.class-list').val();
+                EPclassroomService.getClassInfo($('.class-list').val(), cid).then(function(result){
+                    var students = [];
                     result.forEach(function(item, index){
-                        $scope.students.push(i+1);
+                        var isExist = false;
+                        students.forEach(function(sItem, sIndex){
+                            if(sItem['name'] == item['FirstName'] +"," + item['LastName']){
+                                isExist = true;
+                                return false;
+                            }
+                        });
+                        if(!isExist){
+                            students.push({index:index, name:item['FirstName'] +"," + item['LastName']});    
+                        }
                     });
+                    $scope.students = students;
                 });   
-            });
+            }
         }
     ])
 
@@ -215,6 +222,12 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                 };
 
                 scope.internalControl.getClassroom = function(){
+                    
+                    
+                    if(shapeList[0]['text'] == undefined){
+                        scope.internalControl.drawRoom('square');
+                    }
+                    console.log(shapeList)
                     return shapeList;
                 }
 
@@ -365,7 +378,7 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                         lastObject.type = shapeId.substr(shapeId.indexOf('index') + 5);
                         lastObject.bounding.width = 10;
                         lastObject.bounding.height = 10;
-                        drawCircle(pos, 10, lastObject.type);
+                        drawCircle(pos, 10, lastObject.text);
                     }
                     shapeList[shapeList.length - 1] = lastObject;
                     selectedObjectId = shapeList.length - 1;
@@ -490,7 +503,7 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                                 }
                             break;
                             case 4:
-                                drawCircle(item.pos, 10, item.type);
+                                drawCircle(item.pos, 10, item.text);
                             break;
                         }
                     });

@@ -25,6 +25,39 @@ var router = express.Router();
 require('./app/EProutes.js')(router);
 // REGISTER OUR ROUTES -------------------------------
 app.use('/api', router);
+
+// POST method route
+var sql = require('mssql');
+var config = {
+    server: 'localhost',
+    database: 'EdadminTest',
+    user: 'sa',
+    password: 'password123',
+    port: 49683,
+    instancename: 'SQLEXPRESS'
+};
+
+app.post('/admin/assetment/classroom/save', function(req, res){
+    var classInfo = req.body.classInfo;
+    var classId = req.body.cid;
+    var conn = new sql.Connection(config);
+    console.log('ClassId' + classId);
+    console.log('ClassInfo' + classInfo);
+    conn.connect().then(function() {
+        var req = new sql.Request(conn);
+        classInfo.forEach(function(item, index){
+            req.query("INSERT INTO EPClassDetail (Class) VALUES ('"+classId+"')");
+        });       
+        conn.close;
+        res.send('success');
+    })
+    .catch(function (err) {
+//        console.log(err);
+    });
+});
+
+//    
+
 // START THE SERVER
 // =============================================================================
 app.listen(port);

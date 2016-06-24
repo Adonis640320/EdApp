@@ -26,11 +26,6 @@ module.exports = function(router) {
 
 	router.route('/admin/assetment/classroom/students')
 		.get(classroom.getStudentListByClassId);
-
-	router.route('/admin/assetment/classroom/save')
-		.post(classroom.saveClass);
-
 	router.route('/admin/assetment/classroom/classes')
 		.get(classroom.getClassList);
-
 };
