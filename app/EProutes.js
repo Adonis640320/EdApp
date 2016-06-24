@@ -24,6 +24,13 @@ module.exports = function(router) {
 		.get(proxy.getData)
 	// ----------------------------------------------------
 
+	router.route('/admin/assetment/classroom/students')
+		.get(classroom.getStudentListByClassId);
+
 	router.route('/admin/assetment/classroom/save')
-		.post(classroom.saveClassroom);
+		.post(classroom.saveClass);
+
+	router.route('/admin/assetment/classroom/classes')
+		.get(classroom.getClassList);
+
 };

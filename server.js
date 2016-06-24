@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var app        = express();
 var path        = require("path");
 var morgan     = require('morgan');
-require('./app/common.js')(process.argv); // set environment
+require('./app/EPcommon.js')(process.argv); // set environment
 // configure app
 app.use(morgan('dev')); // log requests to the console
 
@@ -22,7 +22,7 @@ app.use(cookieParser());
 var port     = process.env.PORT || 8000; // set our port
 // CREATE OUR ROUTER
 var router = express.Router();
-require('./app/routes.js')(router);
+require('./app/EProutes.js')(router);
 // REGISTER OUR ROUTES -------------------------------
 app.use('/api', router);
 // START THE SERVER

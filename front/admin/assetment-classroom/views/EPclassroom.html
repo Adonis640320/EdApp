@@ -2,11 +2,7 @@
 	<div class="classroom-header">
 		<div class="col-md-4">
 			<span class="select-class">Select class:</span>
-			<select>
-				<option>A</option>
-				<option>A</option>
-				<option>A</option>
-			</select>
+			<select class="class-list"></select>
 		</div>
 		<div class="col-md-8 tool-bar">
 			<button class="btn bg-indigo-400" ng-click="scaleZoomIn()">+</button>
@@ -16,10 +12,10 @@
 	</div>
 	<div class="classroom-container">
 		<div class="col-md-2 tool-box">
-			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeRoomShape()">Room Shape</button>
-			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeFurniture()">Furniture</button>
-			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeStudents()">Students</button>
-			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeDesks()">Desks</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.roomshape' , href="javascript;">Room Shape</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.furniture' , href="javascript;">Furniture</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.students' , href="javascript;">Students</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.desks' , href="javascript;">Desks</button>
 		</div>
 		<div class="col-md-2 shape-box">
 			<div ui-view></div>

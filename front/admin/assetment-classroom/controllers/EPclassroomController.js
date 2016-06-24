@@ -12,17 +12,15 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
         'EPclassroomController', ['$rootScope', '$scope', '$cookieStore', 'EPclassroomService', '$state', function($rootScope, $scope, $cookieStore,EPclassroomService, $state) {
 
             $scope.shapeDescription = "";
-            $scope.studentNumbers = []
             $scope.drawingControl = {}; // This is Controller E
 
             var shapeObjectsList = [],
             currentRoomShape = 0;
 
+            var studentList = [];
+            $scope.students = []
+
             var isDragging = false;
-            $scope.$on('$viewContentLoaded', function () 
-            {
-                // javascript code here
-            });
             
             $scope.init = function(){
                 $state.go('admin.assetment.startclassroom');
@@ -32,32 +30,8 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                 $state.go('admin.assetment.classroom');
                 $state.go('admin.assetment.classroom.roomshape');
                 $scope.shapeDescription = "Select a room shape that matches your room. Don't worry about strange curves or corners, just approximate.";
+                getClassList();
                 addStudentItemList();
-            }
-
-            // Sidebar tool box
-            $scope.changeRoomShape = function(){
-                $scope.shapeDescription = "Select a room shape that matches your room. Don't worry about strange curves or corners, just approximate.";
-                $state.go('admin.assetment.classroom.roomshape');   
-            }
-
-            $scope.changeFurniture = function(){
-                $scope.shapeDescription = "Pick out some furniture to dress up your room, If you have unique furniture, try the basic shapes tab.";
-                $state.go('admin.assetment.classroom.furniture');   
-            }
-
-            $scope.changeDesks = function(){
-                $scope.shapeDescription = "Select a desk shape and start to lay them out in the classroom. Make sure you have enough room between the tables for chairs and space to walk.";
-                $state.go('admin.assetment.classroom.desks');   
-            }
-
-            $scope.changeStudents = function(){
-                $scope.shapeDescription = "Add students' name to the seating chart, then drag and drop them into place.";
-                $state.go('admin.assetment.classroom.students');   
-            }
-
-            function addStudentItemList(){
-                for(var i = 0; i < 30; i++) $scope.studentNumbers.push(i+1);
             }
 
             // Room Shape Select
@@ -90,9 +64,9 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
 
             $scope.saveClassroom = function(){
                 var info = $scope.drawingControl.getClassroom();
-                EPclassroomService.save(info).then(function(response){
+/*                EPclassroomService.saveClass(info).then(function(response){
                     console.log('successfully saved');
-                });
+                });*/
             }
 
             // Dragging Shape
@@ -117,6 +91,29 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                   );
             }
             
+            function addStudentItemList(){
+                for(var i = 0; i < 30; i++) $scope.students.push(i+1);
+            }
+
+            function getClassList(){
+                EPclassroomService.getClassList().then(function(result){
+                    console.log(result)
+                    result.forEach(function(item, index){
+                        $('.class-list').append($('<option>', {
+                            value: item,
+                            text: item
+                        }));
+                    });
+                });
+            }
+
+            $('.class-list').on('change', function() {
+                EPclassroomService.getClassInfo(this.value).then(function(result){
+                    result.forEach(function(item, index){
+                        $scope.students.push(i+1);
+                    });
+                });   
+            });
         }
     ])
 
@@ -334,6 +331,8 @@ angular.module('EP.admin.assetment.classroom.controllers', dependencies)
                         bounds;
                     
                     new_object = new ShapeObject(0, "");
+                    
+                    ctx.lineWidth = 1;
 
                     if(shapeList.length == 0)
                         shapeList.push({});
