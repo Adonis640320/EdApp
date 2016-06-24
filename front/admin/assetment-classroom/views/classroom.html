@@ -1,26 +1,35 @@
 <div class="classroom panel panel-body">
-	<div class="col-md-2 shape-box">
-		<div ui-view></div>
-	</div>
-	<div class="col-md-2 tool-box">
-		<button class="btn bg-indigo-400 btn-students" ng-click="changeStudents()">Students</button>
-		<button class="btn bg-indigo-400 btn-desks" ng-click="changeDesks()">Desks</button>
-		<button class="btn bg-indigo-400 btn-furniture" ng-click="changeFurniture()">Furniture</button>
-		<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeRoomShape()">Room Shape</button>
-	</div>
-	<div class="col-md-8">
-		<div class="classroom-header">
+	<div class="classroom-header">
+		<div class="col-md-4">
+			<span class="select-class">Select class:</span>
+			<select>
+				<option>A</option>
+				<option>A</option>
+				<option>A</option>
+			</select>
+		</div>
+		<div class="col-md-8 tool-bar">
 			<button class="btn bg-indigo-400" ng-click="scaleZoomIn()">+</button>
 			<button class="btn bg-indigo-400" ng-click="scaleZoomOut()">-</button>
-			<button class="btn bg-indigo-400" ng-click="trashObject()">T</button>
-			<div class="shape-description">{{shapeDescription}}</div>
+			<button class="btn bg-indigo-400" ng-click="trashObject()">T</button>		
 		</div>
-		<div class="workboard">	
-			<drawing control="drawingControl"></drawing>
-			<input type="text" class="tempInput" style="display:none" value=""></div>
+	</div>
+	<div class="classroom-container">
+		<div class="col-md-2 tool-box">
+			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeRoomShape()">Room Shape</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeFurniture()">Furniture</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeStudents()">Students</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ng-click="changeDesks()">Desks</button>
 		</div>
-		<div class="classroom-footer">
-			<button class="btn bg-indigo-400" ng-click="saveClassroom()">Save ClassRoom</button>
+		<div class="col-md-2 shape-box">
+			<div ui-view></div>
+		</div>
+		<div class="col-md-8">
+			<div class="workboard">	
+				<drawing control="drawingControl"></drawing>
+				<input type="text" class="tempInput" style="display:none" value=""></div>
+				<button class="btn bg-indigo-400 btn-saveroom" ng-click="saveClassroom()">Save ClassRoom</button>
+			</div>
 		</div>
 	</div>
 </div>

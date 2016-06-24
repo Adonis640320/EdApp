@@ -1,26 +1,25 @@
 /* Created by Erik*/
 .classroom{
-	height: 500px;
 }
 
 .classroom-header{
-	height:15%;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+.select-class{
+	font-size: 20px;
 }
 
 .shape-box{
-    border-radius: 10px;
-    background-color: #99FF99;
-    width: 130px;
     text-align: center;
-    height:470px;
 }
 
 .tool-box{
-    text-align: center;
-    position: fixed;
-    left: 30px;
-    top: 280px;
+    text-align: left;
+}
+
+.tool-bar{
+	text-align: center;
 }
 
 .shape-title{
@@ -89,20 +88,13 @@
 }
 
 .btn-roomshape{
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
-.btn-furniture{
-
+.btn-saveroom{
+	float:right;
 }
-
-.btn-desks{
-
-}
-
-.btn-students{
-
-}
-
 
 .align-vertical{
 	/* Safari, Chrome */
@@ -263,38 +255,20 @@
 
 /*Students*/
 .student-item{
-
-}
-
-.student-number{
-	width: 20px;
-	height: 20px;
-	background: blue;
-	color: white;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	float: left;
-}
-
-.student-number:hover{
-	background: gray;
+	margin-bottom: 
 }
 
 .student-name{
 	width: 70px;
 	height:20px;
 	font-size: 8px;
-	float:right;
-}
-
-.clearfix { 
-	clear: both;
 }
 
 .students-list{
 	overflow-y: scroll;
     height: 400px;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .drawboard .student-number{

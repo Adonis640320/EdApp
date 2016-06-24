@@ -124,7 +124,7 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
         return {
             restrict: 'E',
             replace: true,
-            template: '<canvas class="drawingCanvas" drawing id="canvas" width="600" height="400" dropzone="copy s:text/plain s:text/html" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"></canvas>',
+            template: '<canvas class="drawingCanvas" drawing id="canvas" width="600" height="500" dropzone="copy s:text/plain s:text/html" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"></canvas>',
             scope: {
             control: '='
             },
@@ -164,11 +164,11 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                             isDragging = true;
                             break;
                         }
-                        if((xPos < item.pos.x + tWidth / 2) && (xPos > item.pos.x -  tWidth / 2) 
+/*                        if((xPos < item.pos.x + tWidth / 2) && (xPos > item.pos.x -  tWidth / 2) 
                             && (yPos < item.pos.y + tHeight ) && (yPos > item.pos.y +  bHeight / 2 )){
                             $('.tempInput').attr({
                                 type: 'text',
-                                value: '',//item.text,
+                                value: '',
                                 id: 'tempInput',
                                 style: 'position:absolute; top:'+ (item.pos.y + bHeight / 2) +'px; left:'+ (item.pos.x - item.bounding.width / 2)+'px;'+
                                 ' zindex:2; display:block; background:#CCFFFF; border-style:none;' + 
@@ -176,9 +176,11 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                             });
                             selectedObjectId = i;
                             break;
-                        }
+                        }*/
                     }
-                    if(document.getElementById('tempInput').value == ""){
+
+                    // Make text below of shape editable.
+/*                    if(document.getElementById('tempInput').value == ""){
                         document.getElementById('tempInput').value = shapeList[selectedObjectId].text;    
                     }
                     if(!((xPos < shapeList[selectedObjectId].pos.x + tWidth / 2) && (xPos > shapeList[selectedObjectId].pos.x -  tWidth / 2) 
@@ -187,7 +189,7 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                         document.getElementById('tempInput').value = '';
                         document.getElementById('tempInput').style.visibility = 'hidden';
                         redrawAll();                      
-                    }
+                    }*/
                 });
 
                 element.bind('mousemove', function(event){
@@ -211,7 +213,6 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                 }
 
                 scope.internalControl.deleteObject = function(){
-
                     shapeList.splice(selectedObjectId, 1);
                     redrawAll();
                 };
@@ -265,10 +266,10 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                     else if(text != "" || text != undefined)
                     {
                         ctx.beginPath();
-                        ctx.arc(pos.x, pos.y, radius, 0, 2 * Math.PI, false);
-                        ctx.fillStyle = 'blue';
+                        ctx.arc(pos.x , pos.y, radius, 0, 2 * Math.PI, false);
+                        ctx.fillStyle = 'white';
                         ctx.fill();
-                        ctx.lineWidth = 0;
+                        ctx.lineWidth = 1;
                         ctx.strokeStyle = 'blue';
                         ctx.stroke();
                         drawText(pos, text, true, -1);
@@ -278,11 +279,9 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                 function drawText(pos, text, isStudent, currentIndex){
                     if(isStudent){
                         ctx.font = "11pt Arial";
-                        ctx.fillStyle = 'white';
+                        ctx.fillStyle = 'black';
                         var offset = 5;
-                        if(text.length == 2)
-                            offset = 8;
-                        ctx.fillText(text, pos.x - offset, pos.y + 5);
+                        ctx.fillText(text, pos.x - ctx.measureText(text).width / 2, pos.y - 15);
                     }
                     else
                     {
@@ -304,13 +303,13 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                 function drawRoomShape(type){
                     switch(type){
                         case "square":
-                            drawRect({x:300, y:200}, 350, 350, true);
+                            drawRect({x:300, y:250}, 400, 400, true);
                         break;
                         case "tall":
-                            drawRect({x:300, y:200}, 300, 390, true);
+                            drawRect({x:300, y:250}, 300, 450, true);
                         break;
                         case "wide":
-                            drawRect({x:300, y:200}, 500, 300, true);
+                            drawRect({x:300, y:250}, 500, 300, true);
                         break;
                     }
                 }
@@ -410,9 +409,6 @@ angular.module('edApp.admin.assetment.classroom.controllers', dependencies)
                                     'http://localhost:8000/assets/images/computer.png',
                                     'http://localhost:8000/assets/images/horseshoe.png'
                                     ];
-/*                    var bg = $('#'+shapeId + " div").css('background').toString();
-                    var i = bg.indexOf("url") + 5, j = bg.indexOf('no-repeat');
-                    var bgurl = bg.substr(i, j - i - 3)*/
                     var bgurl = "";
                     
                     if(shapeId.substr(0, 1) == 'd') {

@@ -1,5 +1,5 @@
 /**
- * Created by Administrator on 12/23/2015.
+ * Created by Erik.
  */
 
 var dependencies = ['ngCookies'];
