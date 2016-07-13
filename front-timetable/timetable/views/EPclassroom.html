@@ -1,0 +1,31 @@
+<div class="classroom panel panel-body">
+	<div class="classroom-header">
+		<div class="col-md-4">
+			<span class="select-class">Select class:</span>
+			<select class="class-list" onchange="changeClassList()"></select>
+		</div>
+		<div class="col-md-8 tool-bar">
+			<button class="btn bg-indigo-400" ng-click="scaleZoomIn()">+</button>
+			<button class="btn bg-indigo-400" ng-click="scaleZoomOut()">-</button>
+			<button class="btn bg-indigo-400" ng-click="trashObject()">T</button>		
+		</div>
+	</div>
+	<div class="classroom-container">
+		<div class="col-md-2 tool-box">
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.roomshape' , href="javascript;">Room Shape</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.furniture' , href="javascript;">Furniture</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.students' , href="javascript;">Students</button>
+			<button class="btn bg-indigo-400 btn-roomshape" ui-sref='admin.assetment.classroom.desks' , href="javascript;">Desks</button>
+		</div>
+		<div class="col-md-2 shape-box">
+			<div ui-view></div>
+		</div>
+		<div class="col-md-8">
+			<div class="workboard">	
+				<drawing control="drawingControl"></drawing>
+				<input type="text" class="tempInput" style="display:none" value=""></div>
+				<button class="btn bg-indigo-400 btn-saveroom" ng-click="saveClassroom()">Save ClassRoom</button>
+			</div>
+		</div>
+	</div>
+</div>

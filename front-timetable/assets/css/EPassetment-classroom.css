@@ -1,0 +1,263 @@
+/* Created by Erik*/
+.classroom{
+}
+
+.classroom-header{
+	margin-bottom: 40px;
+}
+
+.select-class{
+	font-size: 20px;
+}
+
+.shape-box{
+    text-align: center;
+}
+
+.tool-box{
+    text-align: left;
+}
+
+.tool-bar{
+	text-align: center;
+}
+
+.shape-title{
+	color: green;
+}
+
+.shape-description{
+	float: right;
+    width: 480px;
+    border-width: 1px;
+    background: #CCFFCC;
+    border-style: solid;
+}
+
+.drawboard{
+	border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    width: 100%;
+    height:400px;
+    border-radius: 10px;
+    background: #CCFFFF;
+}
+
+.rs-square{
+	border-width: 3px;
+    border-color: #6699FF;
+    border-style: solid;
+    height: 55px;
+    width: 55px;
+    margin:10px auto;
+    border-radius: 2px;
+}
+
+.rs-square:hover {
+	background-color: #CCFFFF;
+}
+
+.rs-tall{
+	border-width: 3px;
+    border-color: #6699FF;
+    border-style: solid;
+    height: 90px;
+    width: 55px;
+    margin:10px auto;
+    border-radius: 2px;
+}
+.rs-tall:hover {
+	background-color: #CCFFFF;
+}
+.rs-wide{
+	border-width: 3px;
+    border-color: #6699FF;
+    border-style: solid;
+    height: 55px;
+    width: 90px;
+    margin:10px auto;
+    border-radius: 2px;
+}
+.rs-wide:hover {
+	background-color: #CCFFFF;
+}
+
+.sidebar-button{
+
+}
+
+.btn-roomshape{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.btn-saveroom{
+	float:right;
+}
+
+.align-vertical{
+	/* Safari, Chrome */
+	-webkit-transform: rotate(-90deg);
+
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
+
+	/* IE */
+	-ms-transform: rotate(-90deg);
+
+	/* Opera */
+	-o-transform: rotate(-90deg);
+
+	/* Older versions of IE */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+	/* CSS3 standard as defined here: http://www.w3.org/TR/css3-transforms/ */
+	transform: rotate(-90deg);
+}
+
+
+.drawingCanvas{
+	background: #CCFFFF;
+	border-radius: 10px;
+}
+
+/*Furniture*/
+.furniture-window{
+	background: url('../images/EPshapes/EPwindow.png') no-repeat center;
+    background-size:contain;
+    width: auto;
+    height:20px;
+    max-height: 20px;
+}
+
+.furniture-door{
+	background: url('../images/EPshapes/EPdoor.png') no-repeat center;
+    background-size:contain;
+	width: auto;
+    height:30px;
+    max-height: 30px;
+}
+
+.furniture-blackboard{
+	background: url('../images/EPshapes/EPblackboard.png') no-repeat center;
+    background-size:contain;
+	width: auto;
+    height:30px;
+    max-height: 30px;
+}
+
+.furniture-bulletin{
+	background: url('../images/EPshapes/EPbulletin.png') no-repeat center;
+    background-size:contain;
+	width: auto;
+    height:30px;
+    max-height: 30px;
+}
+
+.furniture-bookshelves{
+	background: url('../images/EPshapes/EPbookshelves.png') no-repeat center;
+	width: auto;
+    height:30px;
+    max-height: 30px;
+}
+
+.furniture-locker{
+	background: url('../images/EPshapes/EPlocker.png') no-repeat center;
+    background-size:contain;
+	width: auto;
+    height:30px;
+    max-height: 30px;
+}
+
+.furniture-computer{
+	background: url('../images/EPshapes/EPcomputer.png') no-repeat center;
+    background-size: contain;
+	width: auto;
+    height:35px;
+    max-height: 35px;
+}
+
+.furniture-item{
+	margin-bottom: 10px;
+}
+
+/* Desks */
+
+.desk-square{
+	border-width: 1px;
+	border-style: solid;
+	border-color: blue;
+	background: #E5E9F5;
+	width: 30px;
+	height:30px;
+	margin: 15px auto;
+}
+
+.desk-round{
+	width: 30px;
+	height: 30px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: blue;
+	background: #E5E9F5;
+	margin: 15px auto;
+}
+
+.desk-teacher{
+	border-width: 1px;
+	border-style: solid;
+	border-color: blue;
+	background: #E5E9F5;
+	width: 55px;
+	height:25px;
+	margin: 15px auto;
+}
+
+.desk-rectangle{
+	border-width: 1px;
+	border-style: solid;
+	border-color: blue;
+	background: #E5E9F5;
+	width: 45px;
+	height:30px;
+	margin: 15px auto;
+}
+
+.desk-horseshoe{
+	margin-top: 10px;
+	background: url('../images/EPshapes/EPhorseshoe.png') no-repeat center;
+    background-size: contain;
+	width: auto;
+    height:30px;
+    max-height: 30px;
+}
+
+/*Students*/
+.student-item{
+	margin-bottom: 
+}
+
+.student-name{
+	width: 70px;
+	height:20px;
+	font-size: 8px;
+}
+
+.students-list{
+	overflow-y: scroll;
+    height: 400px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.drawboard .student-number{
+	text-align: center;
+}
+
+.tempInput{
+	position: absolute;
+}
